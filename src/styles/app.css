@@ -431,7 +431,7 @@ p {
   /* border: 1px solid var(--clr-light); */
   background-color: #059bc4;
   border-radius: 5px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
   position: absolute;
   width: 25em;
   top: -100px;
@@ -451,7 +451,7 @@ p {
   /* border: 1px solid var(--clr-light); */
   background-color: #ff615d;
   border-radius: 5px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
   position: absolute;
   width: 25em;
   bottom: 0px;

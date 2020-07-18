@@ -24,6 +24,7 @@ const trans0 = (x, y) => `translate3d(${x / 90}px, ${y / 90}px, 0)`;
 const trans1 = (x, y) => `translate3d(${x / 40}px, ${y / 40}px, 0)`;
 const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 20}px, 0)`;
 const trans3 = (x, y) => `translate3d(${x / 15}px,${y / 15}px, 0)`;
+// const trans32 = (x, y) => `translate3d(${x / 13}px,${y / 13}px, 0)`;
 const trans4 = (x, y) => `translate3d(${x / 10}px,${y / 10}px, 0)`;
 
 const App = () => {
@@ -190,12 +191,6 @@ const App = () => {
             <animated.div
               className="circle5"
               style={{ transform: props.xy.interpolate(trans4) }}
-            >
-              <img className="rotating-70" src={circle10} alt="circle" />
-            </animated.div>
-            <animated.div
-              className="circle5"
-              style={{ transform: props.xy.interpolate(trans0) }}
             >
               <img className="rotating-70" src={circle10} alt="circle" />
             </animated.div>
