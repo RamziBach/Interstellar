@@ -207,7 +207,7 @@ p {
   background-image: url(../img/light-logo_sm.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 4.5em;
+  background-size: 3.5em;
   user-select: none;
 }
 
@@ -223,16 +223,16 @@ p {
 
 .circle {
   position: absolute;
-  top: 19%;
-  right: 20%;
-  width: 226px;
+  top: 25%;
+  right: 25%;
+  width: 186px;
 }
 
 .circle2 {
   position: absolute;
-  top: 15%;
-  right: 15.7%;
-  width: 256px;
+  top: 18.5%;
+  right: 18%;
+  width: 236px;
 }
 
 .circle3 {
@@ -262,8 +262,8 @@ p {
 }
 
 .planet-ul {
-  width: 120px;
-  height: 120px;
+  width: 366px;
+  height: 366px;
   /* border: 1px solid white; */
   margin: 0;
   padding: 0;
@@ -275,9 +275,12 @@ p {
   width: 20px;
   height: 20px;
   background: var(--clr-accent);
-  box-shadow: 0 0 50px var(--clr-accent), 0 0 50px var(--clr-accent);
+  /* box-shadow: 0 0 50px #059bc4, 0 0 50px #059bc4; */
   border-radius: 50%;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .planet1 {
@@ -287,8 +290,10 @@ p {
   left: 0; */
   /* top: 100px;
   left: 0; */
-  top: 0;
-  left: 0;
+  background-color: #059bc4;
+  box-shadow: 0 0 50px #059bc4, 0 0 50px #059bc4, 0 0 50px 10px #059bc4;
+  top: 100px;
+  left: 7px;
 }
 
 .planet2 {
@@ -300,8 +305,12 @@ p {
   height: 25px;
   bottom: 52px;
   left: 100px; */
-  bottom: 0;
-  left: 0;
+  background-color: #ff615d;
+  box-shadow: 0 0 50px #ff615d, 0 0 50px #ff615d, 0 0 50px 10px #ff615d;
+  width: 14px;
+  height: 14px;
+  bottom: 130px;
+  left: 93px;
 }
 
 .planet3 {
@@ -313,8 +322,12 @@ p {
   height: 20px;
   top: 100px;
   right: 72px; */
-  top: 0;
-  right: 0;
+  background-color: #ff921f;
+  box-shadow: 0 0 50px #ff921f, 0 0 50px #ff921f, 0 0 50px 10px #ff921f;
+  width: 16px;
+  height: 16px;
+  top: 150px;
+  right: 64px;
 }
 
 .planet4 {
@@ -326,13 +339,57 @@ p {
   height: 15px;
   bottom: 100px;
   right: 95px; */
-  bottom: 0;
-  right: 0;
+  background-color: #61dafb;
+  box-shadow: 0 0 50px #61dafb, 0 0 50px #61dafb, 0 0 50px 10px #61dafb;
+  width: 18px;
+  height: 18px;
+  bottom: 50px;
+  right: 95px;
+}
+
+.ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid#059bc4;
+  /* box-shadow: 0 0 50px #059bc4; */
+  position: absolute;
+}
+
+.ring2 {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid#ff615d;
+  /* box-shadow: 0 0 50px #059bc4; */
+  position: absolute;
+}
+
+.ring3 {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid#ff921f;
+  /* box-shadow: 0 0 50px #059bc4; */
+  position: absolute;
+}
+
+.ring4 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid#61dafb;
+  /* box-shadow: 0 0 50px #059bc4; */
+  position: absolute;
 }
 
 .pop-up {
   /* border: 1px solid var(--clr-light); */
-  background-color: var(--clr-accent);
+  background-color: #ff921f;
   border-radius: 5px;
   border-top-right-radius: 50px;
   position: absolute;
@@ -352,7 +409,7 @@ p {
 
 .pop-up_sub {
   /* border: 1px solid var(--clr-light); */
-  background-color: var(--clr-accent);
+  background-color: #61dafb;
   border-radius: 5px;
   border-top-right-radius: 50px;
   position: absolute;
@@ -372,7 +429,7 @@ p {
 
 .pop-up2 {
   /* border: 1px solid var(--clr-light); */
-  background-color: var(--clr-accent);
+  background-color: #059bc4;
   border-radius: 5px;
   border-top-right-radius: 50px;
   position: absolute;
@@ -392,7 +449,7 @@ p {
 
 .pop-up_sub2 {
   /* border: 1px solid var(--clr-light); */
-  background-color: var(--clr-accent);
+  background-color: #ff615d;
   border-radius: 5px;
   border-top-right-radius: 50px;
   position: absolute;
