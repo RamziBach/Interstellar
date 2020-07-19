@@ -356,6 +356,42 @@ p {
   position: absolute;
 }
 
+.line-container {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: 230px;
+  right: 373px;
+}
+
+.line1 {
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+  background-color: pink;
+  width: 30px;
+  height: 1px;
+}
+
+.line2 {
+  position: absolute;
+  bottom: 59px;
+  right: 3px;
+  background-color: var(--clr-light);
+  width: 110px;
+  height: 1px;
+  transform: rotate(60deg);
+}
+
+.line3 {
+  position: absolute;
+  bottom: 107px;
+  right: 85px;
+  background-color: var(--clr-light);
+  width: 42px;
+  height: 1px;
+}
+
 .pop-up {
   background-color: #61dafb;
   border-radius: 5px;
