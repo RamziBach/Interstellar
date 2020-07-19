@@ -364,6 +364,30 @@ p {
   right: 373px;
 }
 
+.line-container2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: 0px;
+  right: 272px;
+}
+
+.line-container3 {
+  position: absolute;
+  width: 194px;
+  height: 200px;
+  top: 0px;
+  left: 306px;
+}
+
+.line-container4 {
+  position: absolute;
+  width: 239px;
+  height: 100px;
+  bottom: 0px;
+  left: 261px;
+}
+
 .line1 {
   position: absolute;
   bottom: 12px;
@@ -389,6 +413,90 @@ p {
   right: 85px;
   background-color: #ff921f;
   width: 42px;
+  height: 2px;
+}
+
+.line2-1 {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  background-color: #059bc4;
+  width: 30px;
+  height: 2px;
+}
+
+.line2-2 {
+  position: absolute;
+  bottom: 89px;
+  right: 2px;
+  background-color: #059bc4;
+  width: 110px;
+  height: 2px;
+  transform: rotate(-60deg);
+}
+
+.line2-3 {
+  position: absolute;
+  bottom: 42px;
+  right: 84px;
+  background-color: #059bc4;
+  width: 143px;
+  height: 2px;
+}
+
+.line3-1 {
+  position: absolute;
+  bottom: 37px;
+  left: 0px;
+  background-color: #61dafb;
+  width: 30px;
+  height: 2px;
+}
+
+.line3-2 {
+  position: absolute;
+  bottom: 106px;
+  right: 44px;
+  background-color: #61dafb;
+  width: 160px;
+  height: 2px;
+  transform: rotate(-60deg);
+}
+
+.line3-3 {
+  position: absolute;
+  top: 23px;
+  left: 110px;
+  background-color: #61dafb;
+  width: 84px;
+  height: 2px;
+}
+
+.line4-1 {
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  background-color: #ff615d;
+  width: 30px;
+  height: 2px;
+}
+
+.line4-2 {
+  position: absolute;
+  bottom: 50px;
+  left: 22px;
+  background-color: #ff615d;
+  width: 30px;
+  height: 2px;
+  transform: rotate(60deg);
+}
+
+.line4-3 {
+  position: absolute;
+  bottom: 37px;
+  left: 44px;
+  background-color: #ff615d;
+  width: 195px;
   height: 2px;
 }
 

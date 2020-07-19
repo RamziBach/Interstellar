@@ -60,6 +60,42 @@ const Wacky = () => {
             </animated.div>
 
             <animated.div
+              className="line-container2 pop-up-opacity"
+              style={{
+                opacity: `${isPopUp2 ? '1' : '0'}`,
+                transform: props.xy.interpolate(trans1),
+              }}
+            >
+              <div className="line2-1"></div>
+              <div className="line2-2"></div>
+              <div className="line2-3"></div>
+            </animated.div>
+
+            <animated.div
+              className="line-container3 pop-up-opacity"
+              style={{
+                opacity: `${isPopUp3 ? '1' : '0'}`,
+                transform: props.xy.interpolate(trans2),
+              }}
+            >
+              <div className="line3-1"></div>
+              <div className="line3-2"></div>
+              <div className="line3-3"></div>
+            </animated.div>
+
+            <animated.div
+              className="line-container4 pop-up-opacity"
+              style={{
+                opacity: `${isPopUp4 ? '1' : '0'}`,
+                transform: props.xy.interpolate(trans3),
+              }}
+            >
+              <div className="line4-1"></div>
+              <div className="line4-2"></div>
+              <div className="line4-3"></div>
+            </animated.div>
+
+            <animated.div
               className="circle"
               style={{ transform: props.xy.interpolate(trans1) }}
             >
@@ -182,10 +218,11 @@ const Wacky = () => {
               </animated.li>
             </ul>
 
-            <div
+            <animated.div
               className="pop-up"
               style={{
                 opacity: `${!isPopUp3 ? '0' : '1'}`,
+                transform: props.xy.interpolate(trans2),
               }}
             >
               <div
@@ -200,14 +237,19 @@ const Wacky = () => {
                   voluptate.
                 </p>
               </div>
-            </div>
-            <div
+            </animated.div>
+            <animated.div
               className="pop-up_sub"
-              style={{ opacity: `${!isPopUp4 ? '0' : '1'}` }}
+              style={{
+                opacity: `${!isPopUp4 ? '0' : '1'}`,
+                transform: props.xy.interpolate(trans3),
+              }}
             >
               <div
                 className="pop-up-opacity"
-                style={{ opacity: `${isPulsing4 ? '1' : '0'}` }}
+                style={{
+                  opacity: `${isPulsing4 ? '1' : '0'}`,
+                }}
               >
                 <h3 className="pop-up_h3_sub">Lorem.</h3>
                 <p className="pop-up_p_sub">
@@ -215,7 +257,7 @@ const Wacky = () => {
                   commodo culpa culpa. In adipisicing nostrud.
                 </p>
               </div>
-            </div>
+            </animated.div>
             <animated.div
               className="pop-up2"
               style={{
@@ -236,9 +278,12 @@ const Wacky = () => {
                 </p>
               </div>
             </animated.div>
-            <div
+            <animated.div
               className="pop-up_sub2"
-              style={{ opacity: `${!isPopUp2 ? '0' : '1'}` }}
+              style={{
+                opacity: `${!isPopUp2 ? '0' : '1'}`,
+                transform: props.xy.interpolate(trans1),
+              }}
             >
               <div
                 className="pop-up-opacity"
@@ -250,7 +295,7 @@ const Wacky = () => {
                   commodo culpa culpa. In adipisicing nostrud.
                 </p>
               </div>
-            </div>
+            </animated.div>
           </div>
         </div>
       </div>
