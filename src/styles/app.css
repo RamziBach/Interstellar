@@ -275,7 +275,6 @@ p {
   width: 20px;
   height: 20px;
   background: var(--clr-accent);
-  /* box-shadow: 0 0 50px #059bc4, 0 0 50px #059bc4; */
   border-radius: 50%;
   position: absolute;
   display: flex;
@@ -284,120 +283,92 @@ p {
 }
 
 .planet1 {
-  /* width: 55px;
-  height: 55px;
-  top: 0;
-  left: 0; */
-  /* top: 100px;
-  left: 0; */
-  background-color: #059bc4;
-  box-shadow: 0 0 50px #059bc4, 0 0 50px #059bc4, 0 0 50px 10px #059bc4;
+  background-color: #ff921f;
+  box-shadow: 0 0 50px #ff921f, 0 0 50px #ff921f, 0 0 50px 10px #ff921f;
+  width: 40px;
+  height: 40px;
   top: 100px;
-  left: 7px;
+  left: -7px;
 }
 
 .planet2 {
-  /* width: 20px;
-  height: 20px;
+  background-color: #059bc4;
+  box-shadow: 0 0 50px #059bc4, 0 0 50px #059bc4, 0 0 50px 10px #059bc4;
+  width: 15px;
+  height: 15px;
   bottom: 130px;
-  left: 105px; */
-  /* width: 25px;
-  height: 25px;
-  bottom: 52px;
-  left: 100px; */
-  background-color: #ff615d;
-  box-shadow: 0 0 50px #ff615d, 0 0 50px #ff615d, 0 0 50px 10px #ff615d;
-  width: 14px;
-  height: 14px;
-  bottom: 130px;
-  left: 93px;
+  left: 94px;
 }
 
 .planet3 {
-  /* width: 45px;
-  height: 45px;
-  top: 100px;
-  right: 45px; */
-  /* width: 20px;
-  height: 20px;
-  top: 100px;
-  right: 72px; */
-  background-color: #ff921f;
-  box-shadow: 0 0 50px #ff921f, 0 0 50px #ff921f, 0 0 50px 10px #ff921f;
-  width: 16px;
-  height: 16px;
+  background-color: #61dafb;
+  box-shadow: 0 0 50px #61dafb, 0 0 50px #61dafb, 0 0 50px 10px #61dafb;
+  width: 24px;
+  height: 24px;
   top: 150px;
-  right: 64px;
+  right: 60px;
 }
 
 .planet4 {
-  /* width: 30px;
+  background-color: #ff615d;
+  box-shadow: 0 0 50px #ff615d, 0 0 50px #ff615d, 0 0 50px 10px #ff615d;
+  width: 30px;
   height: 30px;
-  bottom: 0;
-  right: 105px; */
-  /* width: 15px;
-  height: 15px;
-  bottom: 100px;
-  right: 95px; */
-  background-color: #61dafb;
-  box-shadow: 0 0 50px #61dafb, 0 0 50px #61dafb, 0 0 50px 10px #61dafb;
-  width: 18px;
-  height: 18px;
   bottom: 50px;
-  right: 95px;
+  /* bottom: 10px;
+  right: 85px; */
+  right: 105px;
 }
 
 .ring {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: transparent;
-  border: 2px solid#059bc4;
-  /* box-shadow: 0 0 50px #059bc4; */
+  border: 2px solid#ff921f;
   position: absolute;
 }
 
 .ring2 {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: transparent;
-  border: 2px solid#ff615d;
-  /* box-shadow: 0 0 50px #059bc4; */
+  border: 2px solid#059bc4;
   position: absolute;
 }
 
 .ring3 {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: transparent;
-  border: 2px solid#ff921f;
-  /* box-shadow: 0 0 50px #059bc4; */
+  border: 2px solid#61dafb;
   position: absolute;
 }
 
 .ring4 {
-  width: 38px;
-  height: 38px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: transparent;
-  border: 2px solid#61dafb;
-  /* box-shadow: 0 0 50px #059bc4; */
+  border: 2px solid#ff615d;
   position: absolute;
 }
 
 .pop-up {
-  /* border: 1px solid var(--clr-light); */
-  background-color: #ff921f;
+  background-color: #61dafb;
   border-radius: 5px;
-  border-top-right-radius: 50px;
   position: absolute;
   width: 25em;
   top: -100px;
   left: 500px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   padding: 1em;
+  transition: all 2s ease-out;
+}
+
+.pop-up-opacity {
   transition: all 2s ease-out;
 }
 
@@ -408,10 +379,8 @@ p {
 }
 
 .pop-up_sub {
-  /* border: 1px solid var(--clr-light); */
-  background-color: #61dafb;
+  background-color: #ff615d;
   border-radius: 5px;
-  border-top-right-radius: 50px;
   position: absolute;
   width: 25em;
   bottom: 0px;
@@ -428,10 +397,8 @@ p {
 }
 
 .pop-up2 {
-  /* border: 1px solid var(--clr-light); */
-  background-color: #059bc4;
+  background-color: #ff921f;
   border-radius: 5px;
-  border-top-left-radius: 50px;
   position: absolute;
   width: 25em;
   top: -100px;
@@ -448,10 +415,8 @@ p {
 }
 
 .pop-up_sub2 {
-  /* border: 1px solid var(--clr-light); */
-  background-color: #ff615d;
+  background-color: #059bc4;
   border-radius: 5px;
-  border-top-left-radius: 50px;
   position: absolute;
   width: 25em;
   bottom: 0px;
