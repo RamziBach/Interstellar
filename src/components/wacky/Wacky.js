@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import circle1 from '../../img/circle-1.svg';
@@ -11,6 +11,7 @@ import circle7 from '../../img/circle-7.svg';
 import circle8 from '../../img/circle-8.svg';
 import circle9 from '../../img/circle-9.svg';
 import circle10 from '../../img/circle-10.svg';
+import close from '../../img/close.svg';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
@@ -18,7 +19,6 @@ const trans0 = (x, y) => `translate3d(${x / 90}px, ${y / 90}px, 0)`;
 const trans1 = (x, y) => `translate3d(${x / 40}px, ${y / 40}px, 0)`;
 const trans2 = (x, y) => `translate3d(${x / 20}px,${y / 20}px, 0)`;
 const trans3 = (x, y) => `translate3d(${x / 15}px,${y / 15}px, 0)`;
-// const trans32 = (x, y) => `translate3d(${x / 13}px,${y / 13}px, 0)`;
 const trans4 = (x, y) => `translate3d(${x / 10}px,${y / 10}px, 0)`;
 
 const Wacky = () => {
@@ -35,6 +35,23 @@ const Wacky = () => {
     xy: [0, 0],
     config: { mass: 20, tension: 550, friction: 140 },
   }));
+
+  useEffect(() => {
+    const isPulsing = !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
+    const isPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
+    if (isPulsing && isPopUp) {
+      setIsPulsing1(true);
+    }
+  }, [
+    isPulsing1,
+    isPulsing2,
+    isPulsing3,
+    isPulsing4,
+    isPopUp1,
+    isPopUp2,
+    isPopUp3,
+    isPopUp4,
+  ]);
 
   return (
     <>
@@ -157,15 +174,12 @@ const Wacky = () => {
             </animated.div>
 
             <ul className="planet-ul">
-              {/* <div className="line-container">
-                <div className="line1"></div>
-              </div> */}
               <animated.li
                 className="planet planet1"
                 onMouseEnter={() => isPulsing1 && setIsPopUp1(true)}
                 onMouseLeave={() => {
                   if (isPulsing1) {
-                    setIsPopUp1(false);
+                    // setIsPopUp1(false);
                     setIsPulsing1(false);
                     setIsPulsing4(true);
                   }
@@ -179,9 +193,9 @@ const Wacky = () => {
                 onMouseEnter={() => isPulsing2 && setIsPopUp2(true)}
                 onMouseLeave={() => {
                   if (isPulsing2) {
-                    setIsPopUp2(false);
+                    // setIsPopUp2(false);
                     setIsPulsing2(false);
-                    setIsPulsing1(true);
+                    // setIsPulsing1(true);
                   }
                 }}
                 style={{ transform: props.xy.interpolate(trans1) }}
@@ -193,7 +207,7 @@ const Wacky = () => {
                 onMouseEnter={() => isPulsing3 && setIsPopUp3(true)}
                 onMouseLeave={() => {
                   if (isPulsing3) {
-                    setIsPopUp3(false);
+                    // setIsPopUp3(false);
                     setIsPulsing3(false);
                     setIsPulsing2(true);
                   }
@@ -207,7 +221,7 @@ const Wacky = () => {
                 onMouseEnter={() => isPulsing4 && setIsPopUp4(true)}
                 onMouseLeave={() => {
                   if (isPulsing4) {
-                    setIsPopUp4(false);
+                    // setIsPopUp4(false);
                     setIsPulsing4(false);
                     setIsPulsing3(true);
                   }
@@ -227,9 +241,18 @@ const Wacky = () => {
             >
               <div
                 className="pop-up-opacity"
-                style={{ opacity: `${isPulsing3 ? '1' : '0'}` }}
+                // style={{ opacity: `${isPulsing3 ? '1' : '0'}` }}
               >
-                <h3 className="pop-up_h3">Lorem.</h3>
+                <div className="pop-up_header-container">
+                  <h3 className="pop-up_h3">Lorem.</h3>
+                  <button
+                    onClick={() => {
+                      setIsPopUp3(false);
+                    }}
+                  >
+                    <img className="close" src={close} alt="close" />
+                  </button>
+                </div>
                 <p className="pop-up_p">
                   Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
                   commodo culpa culpa. In adipisicing nostrud ex cillum velit
@@ -247,11 +270,22 @@ const Wacky = () => {
             >
               <div
                 className="pop-up-opacity"
-                style={{
-                  opacity: `${isPulsing4 ? '1' : '0'}`,
-                }}
+                style={
+                  {
+                    // opacity: `${isPulsing4 ? '1' : '0'}`,
+                  }
+                }
               >
-                <h3 className="pop-up_h3_sub">Lorem.</h3>
+                <div className="pop-up_header-container">
+                  <h3 className="pop-up_h3_sub">Lorem.</h3>
+                  <button
+                    onClick={() => {
+                      setIsPopUp4(false);
+                    }}
+                  >
+                    <img className="close" src={close} alt="close" />
+                  </button>
+                </div>
                 <p className="pop-up_p_sub">
                   Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
                   commodo culpa culpa. In adipisicing nostrud.
@@ -267,9 +301,18 @@ const Wacky = () => {
             >
               <div
                 className="pop-up-opacity"
-                style={{ opacity: `${isPulsing1 ? '1' : '0'}` }}
+                // style={{ opacity: `${isPulsing1 ? '1' : '0'}` }}
               >
-                <h3 className="pop-up_h3">Lorem.</h3>
+                <div className="pop-up_header-container">
+                  <h3 className="pop-up_h3">Lorem.</h3>
+                  <button
+                    onClick={() => {
+                      setIsPopUp1(false);
+                    }}
+                  >
+                    <img className="close" src={close} alt="close" />
+                  </button>
+                </div>
                 <p className="pop-up_p2">
                   Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
                   commodo culpa culpa. In adipisicing nostrud ex cillum velit
@@ -287,9 +330,18 @@ const Wacky = () => {
             >
               <div
                 className="pop-up-opacity"
-                style={{ opacity: `${isPulsing2 ? '1' : '0'}` }}
+                // style={{ opacity: `${isPulsing2 ? '1' : '0'}` }}
               >
-                <h3 className="pop-up_h3_sub2">Lorem.</h3>
+                <div className="pop-up_header-container">
+                  <h3 className="pop-up_h3_sub">Lorem.</h3>
+                  <button
+                    onClick={() => {
+                      setIsPopUp2(false);
+                    }}
+                  >
+                    <img className="close" src={close} alt="close" />
+                  </button>
+                </div>
                 <p className="pop-up_p_sub2">
                   Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
                   commodo culpa culpa. In adipisicing nostrud.

@@ -583,3 +583,13 @@ p {
   text-align: left;
   margin: 0;
 }
+
+.pop-up_header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  width: 1em;
+}
