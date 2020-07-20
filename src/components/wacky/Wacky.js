@@ -37,11 +37,96 @@ const Wacky = () => {
   }));
 
   useEffect(() => {
-    const isPulsing = !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
-    const isPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
-    if (isPulsing && isPopUp) {
-      setIsPulsing1(true);
+    const planet1 = document.querySelector('.planet1');
+    const planet2 = document.querySelector('.planet2');
+    const planet3 = document.querySelector('.planet3');
+    const planet4 = document.querySelector('.planet4');
+    const popUp = document.querySelector('.pop-up');
+    const popUpSub = document.querySelector('.pop-up_sub');
+    const popUp2 = document.querySelector('.pop-up2');
+    const popUpSub2 = document.querySelector('.pop-up_sub2');
+    const isNotPulsing =
+      !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
+    const isNotPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
+    if (isNotPulsing && isNotPopUp) setIsPulsing1(true);
+    if (isPopUp1 && isPulsing1) {
+      let timer1 = setTimeout(() => {
+        setIsPopUp1(false);
+      }, 8000);
+      planet1.addEventListener('mouseover', () => {
+        window.clearTimeout(timer1);
+        timer1 = setTimeout(() => {
+          setIsPopUp1(false);
+        }, 8000);
+      });
+      popUp2.addEventListener('mouseover', () => {
+        window.clearTimeout(timer1);
+        timer1 = setTimeout(() => {
+          setIsPopUp1(false);
+        }, 8000);
+      });
     }
+    if (isPopUp2 && isPulsing2) {
+      let timer2 = setTimeout(() => {
+        setIsPopUp2(false);
+      }, 8000);
+      planet2.addEventListener('mouseover', () => {
+        window.clearTimeout(timer2);
+        timer2 = setTimeout(() => {
+          setIsPopUp2(false);
+        }, 8000);
+      });
+      popUpSub2.addEventListener('mouseover', () => {
+        window.clearTimeout(timer2);
+        timer2 = setTimeout(() => {
+          setIsPopUp2(false);
+        }, 8000);
+      });
+    }
+    if (isPopUp3 && isPulsing3) {
+      let timer3 = setTimeout(() => {
+        setIsPopUp3(false);
+      }, 8000);
+      planet3.addEventListener('mouseover', () => {
+        window.clearTimeout(timer3);
+        timer3 = setTimeout(() => {
+          setIsPopUp3(false);
+        }, 8000);
+      });
+      popUp.addEventListener('mouseover', () => {
+        window.clearTimeout(timer3);
+        timer3 = setTimeout(() => {
+          setIsPopUp3(false);
+        }, 8000);
+      });
+    }
+    if (isPopUp4 && isPulsing4) {
+      let timer4 = setTimeout(() => {
+        setIsPopUp4(false);
+      }, 8000);
+      planet4.addEventListener('mouseover', () => {
+        window.clearTimeout(timer4);
+        timer4 = setTimeout(() => {
+          setIsPopUp4(false);
+        }, 8000);
+      });
+      popUpSub.addEventListener('mouseover', () => {
+        window.clearTimeout(timer4);
+        timer4 = setTimeout(() => {
+          setIsPopUp4(false);
+        }, 8000);
+      });
+    }
+    return () => {
+      planet1.removeEventListener('mouseover', () => {});
+      planet2.removeEventListener('mouseover', () => {});
+      planet3.removeEventListener('mouseover', () => {});
+      planet4.removeEventListener('mouseover', () => {});
+      popUp.removeEventListener('mouseover', () => {});
+      popUp2.removeEventListener('mouseover', () => {});
+      popUpSub.removeEventListener('mouseover', () => {});
+      popUpSub2.removeEventListener('mouseover', () => {});
+    };
   }, [
     isPulsing1,
     isPulsing2,
