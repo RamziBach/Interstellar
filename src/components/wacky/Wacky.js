@@ -67,28 +67,36 @@ const Wacky = () => {
       setIsPulsing2(false);
     }, 26000);
     planet1Ref.current.addEventListener('mouseenter', () => {
-      window.clearTimeout(mountTimer1);
-      window.clearTimeout(mountTimer2);
-      window.clearTimeout(mountTimer3);
-      window.clearTimeout(mountTimer4);
+      if (isPulsing1) {
+        window.clearTimeout(mountTimer1);
+        window.clearTimeout(mountTimer2);
+        window.clearTimeout(mountTimer3);
+        window.clearTimeout(mountTimer4);
+      }
     });
     planet2Ref.current.addEventListener('mouseenter', () => {
-      window.clearTimeout(mountTimer1);
-      window.clearTimeout(mountTimer2);
-      window.clearTimeout(mountTimer3);
-      window.clearTimeout(mountTimer4);
+      if (isPulsing4) {
+        window.clearTimeout(mountTimer1);
+        window.clearTimeout(mountTimer2);
+        window.clearTimeout(mountTimer3);
+        window.clearTimeout(mountTimer4);
+      }
     });
     planet3Ref.current.addEventListener('mouseenter', () => {
-      window.clearTimeout(mountTimer1);
-      window.clearTimeout(mountTimer2);
-      window.clearTimeout(mountTimer3);
-      window.clearTimeout(mountTimer4);
+      if (isPulsing3) {
+        window.clearTimeout(mountTimer2);
+        window.clearTimeout(mountTimer3);
+        window.clearTimeout(mountTimer1);
+        window.clearTimeout(mountTimer4);
+      }
     });
     planet4Ref.current.addEventListener('mouseenter', () => {
-      window.clearTimeout(mountTimer1);
-      window.clearTimeout(mountTimer2);
-      window.clearTimeout(mountTimer3);
-      window.clearTimeout(mountTimer4);
+      if (isPulsing2) {
+        window.clearTimeout(mountTimer1);
+        window.clearTimeout(mountTimer2);
+        window.clearTimeout(mountTimer3);
+        window.clearTimeout(mountTimer4);
+      }
     });
   }, []);
 
