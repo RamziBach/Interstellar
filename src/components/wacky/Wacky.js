@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import circle1 from '../../img/circle-1.svg';
@@ -31,35 +31,68 @@ const Wacky = () => {
   const [isPopUp3, setIsPopUp3] = useState(false);
   const [isPopUp4, setIsPopUp4] = useState(false);
 
+  const planet1Ref = useRef(null);
+  const planet2Ref = useRef(null);
+  const planet3Ref = useRef(null);
+  const planet4Ref = useRef(null);
+
+  const popUpRef = useRef(null);
+  const popUpSubRef = useRef(null);
+  const popUp2Ref = useRef(null);
+  const popUpSubRef2 = useRef(null);
+
   const [props, set] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 20, tension: 550, friction: 140 },
   }));
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsPopUp1(true);
-  //   }, 2000);
-  //   setTimeout(() => {
-  //     setIsPopUp4(true);
-  //   }, 10000);
-  //   setTimeout(() => {
-  //     setIsPopUp3(true);
-  //   }, 18000);
-  //   setTimeout(() => {
-  //     setIsPopUp2(true);
-  //   }, 26000);
-  // }, []);
+  useEffect(() => {
+    let mountTimer1 = setTimeout(() => {
+      setIsPopUp1(true);
+      setIsPulsing1(false);
+      setIsPulsing4(true);
+    }, 2000);
+    let mountTimer2 = setTimeout(() => {
+      setIsPopUp4(true);
+      setIsPulsing4(false);
+      setIsPulsing3(true);
+    }, 10000);
+    let mountTimer3 = setTimeout(() => {
+      setIsPopUp3(true);
+      setIsPulsing3(false);
+      setIsPulsing2(true);
+    }, 18000);
+    let mountTimer4 = setTimeout(() => {
+      setIsPopUp2(true);
+      setIsPulsing2(false);
+    }, 26000);
+    planet1Ref.current.addEventListener('mouseenter', () => {
+      window.clearTimeout(mountTimer1);
+      window.clearTimeout(mountTimer2);
+      window.clearTimeout(mountTimer3);
+      window.clearTimeout(mountTimer4);
+    });
+    planet2Ref.current.addEventListener('mouseenter', () => {
+      window.clearTimeout(mountTimer1);
+      window.clearTimeout(mountTimer2);
+      window.clearTimeout(mountTimer3);
+      window.clearTimeout(mountTimer4);
+    });
+    planet3Ref.current.addEventListener('mouseenter', () => {
+      window.clearTimeout(mountTimer1);
+      window.clearTimeout(mountTimer2);
+      window.clearTimeout(mountTimer3);
+      window.clearTimeout(mountTimer4);
+    });
+    planet4Ref.current.addEventListener('mouseenter', () => {
+      window.clearTimeout(mountTimer1);
+      window.clearTimeout(mountTimer2);
+      window.clearTimeout(mountTimer3);
+      window.clearTimeout(mountTimer4);
+    });
+  }, []);
 
   useEffect(() => {
-    const planet1 = document.querySelector('.planet1');
-    const planet2 = document.querySelector('.planet2');
-    const planet3 = document.querySelector('.planet3');
-    const planet4 = document.querySelector('.planet4');
-    const popUp = document.querySelector('.pop-up');
-    const popUpSub = document.querySelector('.pop-up_sub');
-    const popUp2 = document.querySelector('.pop-up2');
-    const popUpSub2 = document.querySelector('.pop-up_sub2');
     const isNotPulsing =
       !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
     const isNotPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
@@ -68,13 +101,13 @@ const Wacky = () => {
       let timer1 = setTimeout(() => {
         setIsPopUp1(false);
       }, 10000);
-      planet1.addEventListener('mouseover', () => {
+      planet1Ref.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer1);
         timer1 = setTimeout(() => {
           setIsPopUp1(false);
         }, 10000);
       });
-      popUp2.addEventListener('mouseover', () => {
+      popUp2Ref.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer1);
         timer1 = setTimeout(() => {
           setIsPopUp1(false);
@@ -85,13 +118,13 @@ const Wacky = () => {
       let timer2 = setTimeout(() => {
         setIsPopUp2(false);
       }, 10000);
-      planet2.addEventListener('mouseover', () => {
+      planet2Ref.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer2);
         timer2 = setTimeout(() => {
           setIsPopUp2(false);
         }, 10000);
       });
-      popUpSub2.addEventListener('mouseover', () => {
+      popUpSubRef2.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer2);
         timer2 = setTimeout(() => {
           setIsPopUp2(false);
@@ -102,13 +135,13 @@ const Wacky = () => {
       let timer3 = setTimeout(() => {
         setIsPopUp3(false);
       }, 10000);
-      planet3.addEventListener('mouseover', () => {
+      planet3Ref.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer3);
         timer3 = setTimeout(() => {
           setIsPopUp3(false);
         }, 10000);
       });
-      popUp.addEventListener('mouseover', () => {
+      popUpRef.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer3);
         timer3 = setTimeout(() => {
           setIsPopUp3(false);
@@ -119,13 +152,13 @@ const Wacky = () => {
       let timer4 = setTimeout(() => {
         setIsPopUp4(false);
       }, 10000);
-      planet4.addEventListener('mouseover', () => {
+      planet4Ref.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer4);
         timer4 = setTimeout(() => {
           setIsPopUp4(false);
         }, 10000);
       });
-      popUpSub.addEventListener('mouseover', () => {
+      popUpSubRef.current.addEventListener('mousemove', () => {
         window.clearTimeout(timer4);
         timer4 = setTimeout(() => {
           setIsPopUp4(false);
@@ -133,14 +166,14 @@ const Wacky = () => {
       });
     }
     return () => {
-      planet1.removeEventListener('mouseover', () => {});
-      planet2.removeEventListener('mouseover', () => {});
-      planet3.removeEventListener('mouseover', () => {});
-      planet4.removeEventListener('mouseover', () => {});
-      popUp.removeEventListener('mouseover', () => {});
-      popUp2.removeEventListener('mouseover', () => {});
-      popUpSub.removeEventListener('mouseover', () => {});
-      popUpSub2.removeEventListener('mouseover', () => {});
+      planet1Ref.current.removeEventListener('mousemove', () => {});
+      planet2Ref.current.removeEventListener('mousemove', () => {});
+      planet3Ref.current.removeEventListener('mousemove', () => {});
+      planet4Ref.current.removeEventListener('mousemove', () => {});
+      popUpRef.current.removeEventListener('mousemove', () => {});
+      popUp2Ref.current.removeEventListener('mousemove', () => {});
+      popUpSubRef.current.removeEventListener('mousemove', () => {});
+      popUpSubRef2.current.removeEventListener('mousemove', () => {});
     };
   }, [
     isPulsing1,
@@ -275,6 +308,7 @@ const Wacky = () => {
 
             <ul className="planet-ul">
               <animated.li
+                ref={planet1Ref}
                 className="planet planet1"
                 onMouseEnter={() => {
                   if (isPulsing1) {
@@ -295,6 +329,7 @@ const Wacky = () => {
                 {isPulsing1 && <div className="ring pulsate"></div>}
               </animated.li>
               <animated.li
+                ref={planet2Ref}
                 className={`planet planet2`}
                 onMouseEnter={() => {
                   if (isPulsing2) {
@@ -314,6 +349,7 @@ const Wacky = () => {
                 {isPulsing2 && <div className="ring2 pulsate"></div>}
               </animated.li>
               <animated.li
+                ref={planet3Ref}
                 className={`planet planet3`}
                 onMouseEnter={() => {
                   if (isPulsing3) {
@@ -334,6 +370,7 @@ const Wacky = () => {
                 {isPulsing3 && <div className="ring3 pulsate"></div>}
               </animated.li>
               <animated.li
+                ref={planet4Ref}
                 className={`planet planet4`}
                 onMouseEnter={() => {
                   if (isPulsing4) {
@@ -356,6 +393,7 @@ const Wacky = () => {
             </ul>
 
             <animated.div
+              ref={popUpRef}
               className="pop-up"
               style={{
                 opacity: `${!isPopUp3 ? '0' : '1'}`,
@@ -385,6 +423,7 @@ const Wacky = () => {
               </div>
             </animated.div>
             <animated.div
+              ref={popUpSubRef}
               className="pop-up_sub"
               style={{
                 opacity: `${!isPopUp4 ? '0' : '1'}`,
@@ -416,6 +455,7 @@ const Wacky = () => {
               </div>
             </animated.div>
             <animated.div
+              ref={popUp2Ref}
               className="pop-up2"
               style={{
                 opacity: `${!isPopUp1 ? '0' : '1'}`,
@@ -445,6 +485,7 @@ const Wacky = () => {
               </div>
             </animated.div>
             <animated.div
+              ref={popUpSubRef2}
               className="pop-up_sub2"
               style={{
                 opacity: `${!isPopUp2 ? '0' : '1'}`,
