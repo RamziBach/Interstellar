@@ -294,6 +294,6 @@
   animation-fill-mode: both;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  -webkit-animation-duration: 1.25s;
-  animation-duration: 1.25s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
