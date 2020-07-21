@@ -36,6 +36,21 @@ const Wacky = () => {
     config: { mass: 20, tension: 550, friction: 140 },
   }));
 
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsPopUp1(true);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     setIsPopUp4(true);
+  //   }, 10000);
+  //   setTimeout(() => {
+  //     setIsPopUp3(true);
+  //   }, 18000);
+  //   setTimeout(() => {
+  //     setIsPopUp2(true);
+  //   }, 26000);
+  // }, []);
+
   useEffect(() => {
     const planet1 = document.querySelector('.planet1');
     const planet2 = document.querySelector('.planet2');
@@ -49,72 +64,72 @@ const Wacky = () => {
       !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
     const isNotPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
     if (isNotPulsing && isNotPopUp) setIsPulsing1(true);
-    if (isPopUp1 && isPulsing1) {
+    if (isPopUp1) {
       let timer1 = setTimeout(() => {
         setIsPopUp1(false);
-      }, 8000);
+      }, 10000);
       planet1.addEventListener('mouseover', () => {
         window.clearTimeout(timer1);
         timer1 = setTimeout(() => {
           setIsPopUp1(false);
-        }, 8000);
+        }, 10000);
       });
       popUp2.addEventListener('mouseover', () => {
         window.clearTimeout(timer1);
         timer1 = setTimeout(() => {
           setIsPopUp1(false);
-        }, 8000);
+        }, 10000);
       });
     }
-    if (isPopUp2 && isPulsing2) {
+    if (isPopUp2) {
       let timer2 = setTimeout(() => {
         setIsPopUp2(false);
-      }, 8000);
+      }, 10000);
       planet2.addEventListener('mouseover', () => {
         window.clearTimeout(timer2);
         timer2 = setTimeout(() => {
           setIsPopUp2(false);
-        }, 8000);
+        }, 10000);
       });
       popUpSub2.addEventListener('mouseover', () => {
         window.clearTimeout(timer2);
         timer2 = setTimeout(() => {
           setIsPopUp2(false);
-        }, 8000);
+        }, 10000);
       });
     }
-    if (isPopUp3 && isPulsing3) {
+    if (isPopUp3) {
       let timer3 = setTimeout(() => {
         setIsPopUp3(false);
-      }, 8000);
+      }, 10000);
       planet3.addEventListener('mouseover', () => {
         window.clearTimeout(timer3);
         timer3 = setTimeout(() => {
           setIsPopUp3(false);
-        }, 8000);
+        }, 10000);
       });
       popUp.addEventListener('mouseover', () => {
         window.clearTimeout(timer3);
         timer3 = setTimeout(() => {
           setIsPopUp3(false);
-        }, 8000);
+        }, 10000);
       });
     }
-    if (isPopUp4 && isPulsing4) {
+    if (isPopUp4) {
       let timer4 = setTimeout(() => {
         setIsPopUp4(false);
-      }, 8000);
+      }, 10000);
       planet4.addEventListener('mouseover', () => {
         window.clearTimeout(timer4);
         timer4 = setTimeout(() => {
           setIsPopUp4(false);
-        }, 8000);
+        }, 10000);
       });
       popUpSub.addEventListener('mouseover', () => {
         window.clearTimeout(timer4);
         timer4 = setTimeout(() => {
           setIsPopUp4(false);
-        }, 8000);
+        }, 10000);
       });
     }
     return () => {
@@ -261,56 +276,79 @@ const Wacky = () => {
             <ul className="planet-ul">
               <animated.li
                 className="planet planet1"
-                onMouseEnter={() => isPulsing1 && setIsPopUp1(true)}
-                onMouseLeave={() => {
+                onMouseEnter={() => {
                   if (isPulsing1) {
-                    // setIsPopUp1(false);
+                    setIsPopUp1(true);
                     setIsPulsing1(false);
                     setIsPulsing4(true);
                   }
                 }}
+                // onMouseLeave={() => {
+                //   if (isPulsing1) {
+                //     // setIsPopUp1(false);
+                //     setIsPulsing1(false);
+                //     setIsPulsing4(true);
+                //   }
+                // }}
                 style={{ transform: props.xy.interpolate(trans4) }}
               >
                 {isPulsing1 && <div className="ring pulsate"></div>}
               </animated.li>
               <animated.li
                 className={`planet planet2`}
-                onMouseEnter={() => isPulsing2 && setIsPopUp2(true)}
-                onMouseLeave={() => {
+                onMouseEnter={() => {
                   if (isPulsing2) {
-                    // setIsPopUp2(false);
+                    setIsPopUp2(true);
                     setIsPulsing2(false);
-                    // setIsPulsing1(true);
                   }
                 }}
+                // onMouseLeave={() => {
+                //   if (isPulsing2) {
+                //     // setIsPopUp2(false);
+                //     setIsPulsing2(false);
+                //     // setIsPulsing1(true);
+                //   }
+                // }}
                 style={{ transform: props.xy.interpolate(trans1) }}
               >
                 {isPulsing2 && <div className="ring2 pulsate"></div>}
               </animated.li>
               <animated.li
                 className={`planet planet3`}
-                onMouseEnter={() => isPulsing3 && setIsPopUp3(true)}
-                onMouseLeave={() => {
+                onMouseEnter={() => {
                   if (isPulsing3) {
-                    // setIsPopUp3(false);
+                    setIsPopUp3(true);
                     setIsPulsing3(false);
                     setIsPulsing2(true);
                   }
                 }}
+                // onMouseLeave={() => {
+                //   if (isPulsing3) {
+                //     // setIsPopUp3(false);
+                //     setIsPulsing3(false);
+                //     setIsPulsing2(true);
+                //   }
+                // }}
                 style={{ transform: props.xy.interpolate(trans2) }}
               >
                 {isPulsing3 && <div className="ring3 pulsate"></div>}
               </animated.li>
               <animated.li
                 className={`planet planet4`}
-                onMouseEnter={() => isPulsing4 && setIsPopUp4(true)}
-                onMouseLeave={() => {
+                onMouseEnter={() => {
                   if (isPulsing4) {
-                    // setIsPopUp4(false);
+                    setIsPopUp4(true);
                     setIsPulsing4(false);
                     setIsPulsing3(true);
                   }
                 }}
+                // onMouseLeave={() => {
+                //   if (isPulsing4) {
+                //     // setIsPopUp4(false);
+                //     setIsPulsing4(false);
+                //     setIsPulsing3(true);
+                //   }
+                // }}
                 style={{ transform: props.xy.interpolate(trans3) }}
               >
                 {isPulsing4 && <div className="ring4 pulsate"></div>}
