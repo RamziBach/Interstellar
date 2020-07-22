@@ -47,57 +47,61 @@ const Wacky = () => {
   }));
 
   useEffect(() => {
-    let mountTimer1 = setTimeout(() => {
+    // let mountTimer1 =
+    setTimeout(() => {
       setIsPopUp1(true);
       setIsPulsing1(false);
       setIsPulsing4(true);
     }, 2000);
-    let mountTimer2 = setTimeout(() => {
+    // let mountTimer2 =
+    setTimeout(() => {
       setIsPopUp4(true);
       setIsPulsing4(false);
       setIsPulsing3(true);
     }, 10000);
-    let mountTimer3 = setTimeout(() => {
+    // let mountTimer3 =
+    setTimeout(() => {
       setIsPopUp3(true);
       setIsPulsing3(false);
       setIsPulsing2(true);
     }, 18000);
-    let mountTimer4 = setTimeout(() => {
+    // let mountTimer4 =
+    setTimeout(() => {
       setIsPopUp2(true);
       setIsPulsing2(false);
     }, 26000);
-    planet1Ref.current.addEventListener('mouseenter', () => {
-      if (isPulsing1) {
-        window.clearTimeout(mountTimer1);
-        window.clearTimeout(mountTimer2);
-        window.clearTimeout(mountTimer3);
-        window.clearTimeout(mountTimer4);
-      }
-    });
-    planet2Ref.current.addEventListener('mouseenter', () => {
-      if (isPulsing4) {
-        window.clearTimeout(mountTimer1);
-        window.clearTimeout(mountTimer2);
-        window.clearTimeout(mountTimer3);
-        window.clearTimeout(mountTimer4);
-      }
-    });
-    planet3Ref.current.addEventListener('mouseenter', () => {
-      if (isPulsing3) {
-        window.clearTimeout(mountTimer2);
-        window.clearTimeout(mountTimer3);
-        window.clearTimeout(mountTimer1);
-        window.clearTimeout(mountTimer4);
-      }
-    });
-    planet4Ref.current.addEventListener('mouseenter', () => {
-      if (isPulsing2) {
-        window.clearTimeout(mountTimer1);
-        window.clearTimeout(mountTimer2);
-        window.clearTimeout(mountTimer3);
-        window.clearTimeout(mountTimer4);
-      }
-    });
+    // planet1Ref.current.addEventListener('mouseenter', () => {
+    //   if (isPulsing1) {
+    //     window.clearTimeout(mountTimer1);
+    //     window.clearTimeout(mountTimer2);
+    //     window.clearTimeout(mountTimer3);
+    //     window.clearTimeout(mountTimer4);
+    //   }
+    // });
+    // planet2Ref.current.addEventListener('mouseenter', () => {
+    //   if (isPulsing4) {
+    //     window.clearTimeout(mountTimer1);
+    //     window.clearTimeout(mountTimer2);
+    //     window.clearTimeout(mountTimer3);
+    //     window.clearTimeout(mountTimer4);
+    //   }
+    // });
+    // planet3Ref.current.addEventListener('mouseenter', () => {
+    //   if (isPulsing3) {
+    //     window.clearTimeout(mountTimer2);
+    //     window.clearTimeout(mountTimer3);
+    //     window.clearTimeout(mountTimer1);
+    //     window.clearTimeout(mountTimer4);
+    //   }
+    // });
+    // planet4Ref.current.addEventListener('mouseenter', () => {
+    //   if (isPulsing2) {
+    //     window.clearTimeout(mountTimer1);
+    //     window.clearTimeout(mountTimer2);
+    //     window.clearTimeout(mountTimer3);
+    //     window.clearTimeout(mountTimer4);
+    //   }
+    // });
   }, []);
 
   useEffect(() => {
