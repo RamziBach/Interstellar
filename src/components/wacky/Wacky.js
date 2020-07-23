@@ -417,7 +417,7 @@ const Wacky = () => {
                 // style={{ opacity: `${isPulsing3 ? '1' : '0'}` }}
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3">Lorem.</h3>
+                  <h3 className="pop-up_h3">Build your own Website.</h3>
                   <button
                     onClick={() => {
                       setIsPopUp3(false);
@@ -427,10 +427,10 @@ const Wacky = () => {
                   </button>
                 </div>
                 <p className="pop-up_p">
-                  Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
-                  commodo culpa culpa. In adipisicing nostrud ex cillum velit
-                  reprehenderit ea labore. Irure reprehenderit elit culpa
-                  voluptate.
+                  No skills required - Our Drag & Drop system makes it easy for
+                  you to build a professional looking website. Build your
+                  platform by picking a theme, then customize it to be unique to
+                  your brand in less than 5 minutes.
                 </p>
               </div>
             </animated.div>
@@ -451,7 +451,7 @@ const Wacky = () => {
                 }
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3_sub">Lorem.</h3>
+                  <h3 className="pop-up_h3_sub">Explode your Growth!</h3>
                   <button
                     onClick={() => {
                       setIsPopUp4(false);
@@ -461,8 +461,10 @@ const Wacky = () => {
                   </button>
                 </div>
                 <p className="pop-up_p_sub">
-                  Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
-                  commodo culpa culpa. In adipisicing nostrud.
+                  Integrate & Display all of your social media feeds, pics, and
+                  videos on one website, making it easier for your community to
+                  consume your content across multiple platforms. No more having
+                  to give people 10 different links!
                 </p>
               </div>
             </animated.div>
@@ -479,7 +481,7 @@ const Wacky = () => {
                 // style={{ opacity: `${isPulsing1 ? '1' : '0'}` }}
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3">Lorem.</h3>
+                  <h3 className="pop-up_h3">Monetize your Passion.</h3>
                   <button
                     onClick={() => {
                       setIsPopUp1(false);
@@ -489,10 +491,10 @@ const Wacky = () => {
                   </button>
                 </div>
                 <p className="pop-up_p2">
-                  Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
-                  commodo culpa culpa. In adipisicing nostrud ex cillum velit
-                  reprehenderit ea labore. Irure reprehenderit elit culpa
-                  voluptate.
+                  Looking for new ways to boost your income? By leveraging our
+                  tools and services you'll be able to create several new
+                  additional revenue streams while simultaniously providing more
+                  value to your community.
                 </p>
               </div>
             </animated.div>
@@ -509,7 +511,7 @@ const Wacky = () => {
                 // style={{ opacity: `${isPulsing2 ? '1' : '0'}` }}
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3_sub">Lorem.</h3>
+                  <h3 className="pop-up_h3_sub">Go full time!</h3>
                   <button
                     onClick={() => {
                       setIsPopUp2(false);
@@ -519,8 +521,10 @@ const Wacky = () => {
                   </button>
                 </div>
                 <p className="pop-up_p_sub2">
-                  Laboris veniam velit Lorem nisi est Lorem eu labore culpa est
-                  commodo culpa culpa. In adipisicing nostrud.
+                  Whether you're just getting started or trying to break into
+                  the top 10, our tools and services aim to make this your full
+                  time gig by helping you grow, manage, and monetize your brand.
+                  Start by building your FREE website.
                 </p>
               </div>
             </animated.div>
