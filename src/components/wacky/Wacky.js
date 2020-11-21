@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import circle1 from '../../img/circle-1.svg';
@@ -11,7 +11,7 @@ import circle7 from '../../img/circle-7.svg';
 import circle8 from '../../img/circle-8.svg';
 import circle9 from '../../img/circle-9.svg';
 import circle10 from '../../img/circle-10.svg';
-import close from '../../img/close.svg';
+// import close from '../../img/close.svg';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
@@ -23,9 +23,9 @@ const trans4 = (x, y) => `translate3d(${x / 10}px,${y / 10}px, 0)`;
 
 const Wacky = () => {
   const [isPulsing1, setIsPulsing1] = useState(true);
-  const [isPulsing2, setIsPulsing2] = useState(null);
-  const [isPulsing3, setIsPulsing3] = useState(null);
-  const [isPulsing4, setIsPulsing4] = useState(null);
+  const [isPulsing2, setIsPulsing2] = useState(true);
+  const [isPulsing3, setIsPulsing3] = useState(true);
+  const [isPulsing4, setIsPulsing4] = useState(true);
   const [isPopUp1, setIsPopUp1] = useState(false);
   const [isPopUp2, setIsPopUp2] = useState(false);
   const [isPopUp3, setIsPopUp3] = useState(false);
@@ -46,157 +46,157 @@ const Wacky = () => {
     config: { mass: 20, tension: 550, friction: 140 },
   }));
 
-  useEffect(() => {
-    // let mountTimer1 =
-    setTimeout(() => {
-      setIsPopUp1(true);
-      setIsPulsing1(false);
-      setIsPulsing4(true);
-    }, 2000);
-    // let mountTimer2 =
-    setTimeout(() => {
-      setIsPopUp4(true);
-      setIsPulsing4(false);
-      setIsPulsing3(true);
-    }, 10000);
-    // let mountTimer3 =
-    setTimeout(() => {
-      setIsPopUp3(true);
-      setIsPulsing3(false);
-      setIsPulsing2(true);
-    }, 18000);
-    // let mountTimer4 =
-    setTimeout(() => {
-      setIsPopUp2(true);
-      setIsPulsing2(false);
-    }, 26000);
-    // planet1Ref.current.addEventListener('mouseenter', () => {
-    //   if (isPulsing1) {
-    //     window.clearTimeout(mountTimer1);
-    //     window.clearTimeout(mountTimer2);
-    //     window.clearTimeout(mountTimer3);
-    //     window.clearTimeout(mountTimer4);
-    //   }
-    // });
-    // planet2Ref.current.addEventListener('mouseenter', () => {
-    //   if (isPulsing4) {
-    //     window.clearTimeout(mountTimer1);
-    //     window.clearTimeout(mountTimer2);
-    //     window.clearTimeout(mountTimer3);
-    //     window.clearTimeout(mountTimer4);
-    //   }
-    // });
-    // planet3Ref.current.addEventListener('mouseenter', () => {
-    //   if (isPulsing3) {
-    //     window.clearTimeout(mountTimer2);
-    //     window.clearTimeout(mountTimer3);
-    //     window.clearTimeout(mountTimer1);
-    //     window.clearTimeout(mountTimer4);
-    //   }
-    // });
-    // planet4Ref.current.addEventListener('mouseenter', () => {
-    //   if (isPulsing2) {
-    //     window.clearTimeout(mountTimer1);
-    //     window.clearTimeout(mountTimer2);
-    //     window.clearTimeout(mountTimer3);
-    //     window.clearTimeout(mountTimer4);
-    //   }
-    // });
-  }, []);
+  // useEffect(() => {
+  //   // let mountTimer1 =
+  //   setTimeout(() => {
+  //     setIsPopUp1(true);
+  //     setIsPulsing1(false);
+  //     setIsPulsing4(true);
+  //   }, 2000);
+  //   // let mountTimer2 =
+  //   setTimeout(() => {
+  //     setIsPopUp4(true);
+  //     setIsPulsing4(false);
+  //     setIsPulsing3(true);
+  //   }, 10000);
+  //   // let mountTimer3 =
+  //   setTimeout(() => {
+  //     setIsPopUp3(true);
+  //     setIsPulsing3(false);
+  //     setIsPulsing2(true);
+  //   }, 18000);
+  //   // let mountTimer4 =
+  //   setTimeout(() => {
+  //     setIsPopUp2(true);
+  //     setIsPulsing2(false);
+  //   }, 26000);
+  //   // planet1Ref.current.addEventListener('mouseenter', () => {
+  //   //   if (isPulsing1) {
+  //   //     window.clearTimeout(mountTimer1);
+  //   //     window.clearTimeout(mountTimer2);
+  //   //     window.clearTimeout(mountTimer3);
+  //   //     window.clearTimeout(mountTimer4);
+  //   //   }
+  //   // });
+  //   // planet2Ref.current.addEventListener('mouseenter', () => {
+  //   //   if (isPulsing4) {
+  //   //     window.clearTimeout(mountTimer1);
+  //   //     window.clearTimeout(mountTimer2);
+  //   //     window.clearTimeout(mountTimer3);
+  //   //     window.clearTimeout(mountTimer4);
+  //   //   }
+  //   // });
+  //   // planet3Ref.current.addEventListener('mouseenter', () => {
+  //   //   if (isPulsing3) {
+  //   //     window.clearTimeout(mountTimer2);
+  //   //     window.clearTimeout(mountTimer3);
+  //   //     window.clearTimeout(mountTimer1);
+  //   //     window.clearTimeout(mountTimer4);
+  //   //   }
+  //   // });
+  //   // planet4Ref.current.addEventListener('mouseenter', () => {
+  //   //   if (isPulsing2) {
+  //   //     window.clearTimeout(mountTimer1);
+  //   //     window.clearTimeout(mountTimer2);
+  //   //     window.clearTimeout(mountTimer3);
+  //   //     window.clearTimeout(mountTimer4);
+  //   //   }
+  //   // });
+  // }, []);
 
-  useEffect(() => {
-    const isNotPulsing =
-      !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
-    const isNotPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
-    if (isNotPulsing && isNotPopUp) setIsPulsing1(true);
-    if (isPopUp1) {
-      let timer1 = setTimeout(() => {
-        setIsPopUp1(false);
-      }, 10000);
-      planet1Ref.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer1);
-        timer1 = setTimeout(() => {
-          setIsPopUp1(false);
-        }, 10000);
-      });
-      popUp2Ref.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer1);
-        timer1 = setTimeout(() => {
-          setIsPopUp1(false);
-        }, 10000);
-      });
-    }
-    if (isPopUp2) {
-      let timer2 = setTimeout(() => {
-        setIsPopUp2(false);
-      }, 10000);
-      planet2Ref.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer2);
-        timer2 = setTimeout(() => {
-          setIsPopUp2(false);
-        }, 10000);
-      });
-      popUpSubRef2.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer2);
-        timer2 = setTimeout(() => {
-          setIsPopUp2(false);
-        }, 10000);
-      });
-    }
-    if (isPopUp3) {
-      let timer3 = setTimeout(() => {
-        setIsPopUp3(false);
-      }, 10000);
-      planet3Ref.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer3);
-        timer3 = setTimeout(() => {
-          setIsPopUp3(false);
-        }, 10000);
-      });
-      popUpRef.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer3);
-        timer3 = setTimeout(() => {
-          setIsPopUp3(false);
-        }, 10000);
-      });
-    }
-    if (isPopUp4) {
-      let timer4 = setTimeout(() => {
-        setIsPopUp4(false);
-      }, 10000);
-      planet4Ref.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer4);
-        timer4 = setTimeout(() => {
-          setIsPopUp4(false);
-        }, 10000);
-      });
-      popUpSubRef.current.addEventListener('mousemove', () => {
-        window.clearTimeout(timer4);
-        timer4 = setTimeout(() => {
-          setIsPopUp4(false);
-        }, 10000);
-      });
-    }
-    return () => {
-      planet1Ref.current.removeEventListener('mousemove', () => {});
-      planet2Ref.current.removeEventListener('mousemove', () => {});
-      planet3Ref.current.removeEventListener('mousemove', () => {});
-      planet4Ref.current.removeEventListener('mousemove', () => {});
-      popUpRef.current.removeEventListener('mousemove', () => {});
-      popUp2Ref.current.removeEventListener('mousemove', () => {});
-      popUpSubRef.current.removeEventListener('mousemove', () => {});
-      popUpSubRef2.current.removeEventListener('mousemove', () => {});
-    };
-  }, [
-    isPulsing1,
-    isPulsing2,
-    isPulsing3,
-    isPulsing4,
-    isPopUp1,
-    isPopUp2,
-    isPopUp3,
-    isPopUp4,
-  ]);
+  // useEffect(() => {
+  //   const isNotPulsing =
+  //     !isPulsing1 && !isPulsing2 && !isPulsing3 && !isPulsing4;
+  //   const isNotPopUp = !isPopUp1 && !isPopUp2 && !isPopUp3 && !isPopUp4;
+  //   if (isNotPulsing && isNotPopUp) setIsPulsing1(true);
+  //   if (isPopUp1) {
+  //     let timer1 = setTimeout(() => {
+  //       setIsPopUp1(false);
+  //     }, 10000);
+  //     planet1Ref.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer1);
+  //       timer1 = setTimeout(() => {
+  //         setIsPopUp1(false);
+  //       }, 10000);
+  //     });
+  //     popUp2Ref.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer1);
+  //       timer1 = setTimeout(() => {
+  //         setIsPopUp1(false);
+  //       }, 10000);
+  //     });
+  //   }
+  //   if (isPopUp2) {
+  //     let timer2 = setTimeout(() => {
+  //       setIsPopUp2(false);
+  //     }, 10000);
+  //     planet2Ref.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer2);
+  //       timer2 = setTimeout(() => {
+  //         setIsPopUp2(false);
+  //       }, 10000);
+  //     });
+  //     popUpSubRef2.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer2);
+  //       timer2 = setTimeout(() => {
+  //         setIsPopUp2(false);
+  //       }, 10000);
+  //     });
+  //   }
+  //   if (isPopUp3) {
+  //     let timer3 = setTimeout(() => {
+  //       setIsPopUp3(false);
+  //     }, 10000);
+  //     planet3Ref.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer3);
+  //       timer3 = setTimeout(() => {
+  //         setIsPopUp3(false);
+  //       }, 10000);
+  //     });
+  //     popUpRef.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer3);
+  //       timer3 = setTimeout(() => {
+  //         setIsPopUp3(false);
+  //       }, 10000);
+  //     });
+  //   }
+  //   if (isPopUp4) {
+  //     let timer4 = setTimeout(() => {
+  //       setIsPopUp4(false);
+  //     }, 10000);
+  //     planet4Ref.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer4);
+  //       timer4 = setTimeout(() => {
+  //         setIsPopUp4(false);
+  //       }, 10000);
+  //     });
+  //     popUpSubRef.current.addEventListener('mousemove', () => {
+  //       window.clearTimeout(timer4);
+  //       timer4 = setTimeout(() => {
+  //         setIsPopUp4(false);
+  //       }, 10000);
+  //     });
+  //   }
+  //   return () => {
+  //     planet1Ref.current.removeEventListener('mousemove', () => {});
+  //     planet2Ref.current.removeEventListener('mousemove', () => {});
+  //     planet3Ref.current.removeEventListener('mousemove', () => {});
+  //     planet4Ref.current.removeEventListener('mousemove', () => {});
+  //     popUpRef.current.removeEventListener('mousemove', () => {});
+  //     popUp2Ref.current.removeEventListener('mousemove', () => {});
+  //     popUpSubRef.current.removeEventListener('mousemove', () => {});
+  //     popUpSubRef2.current.removeEventListener('mousemove', () => {});
+  //   };
+  // }, [
+  //   isPulsing1,
+  //   isPulsing2,
+  //   isPulsing3,
+  //   isPulsing4,
+  //   isPopUp1,
+  //   isPopUp2,
+  //   isPopUp3,
+  //   isPopUp4,
+  // ]);
 
   return (
     <>
@@ -323,19 +323,19 @@ const Wacky = () => {
                 ref={planet1Ref}
                 className="planet planet1"
                 onMouseEnter={() => {
-                  if (isPulsing1) {
-                    setIsPopUp1(true);
-                    setIsPulsing1(false);
-                    setIsPulsing4(true);
-                  }
+                  // if (isPulsing1) {
+                  setIsPopUp1(true);
+                  // setIsPulsing1(false);
+                  // setIsPulsing4(true);
+                  // }
                 }}
-                // onMouseLeave={() => {
-                //   if (isPulsing1) {
-                //     // setIsPopUp1(false);
-                //     setIsPulsing1(false);
-                //     setIsPulsing4(true);
-                //   }
-                // }}
+                onMouseLeave={() => {
+                  // if (isPulsing1) {
+                  setIsPopUp1(false);
+                  // setIsPulsing1(true);
+                  // setIsPulsing4(true);
+                  // }
+                }}
                 style={{ transform: props.xy.interpolate(trans4) }}
               >
                 {isPulsing1 && <div className="ring pulsate"></div>}
@@ -344,18 +344,18 @@ const Wacky = () => {
                 ref={planet2Ref}
                 className={`planet planet2`}
                 onMouseEnter={() => {
-                  if (isPulsing2) {
-                    setIsPopUp2(true);
-                    setIsPulsing2(false);
-                  }
+                  // if (isPulsing2) {
+                  setIsPopUp2(true);
+                  // setIsPulsing2(false);
+                  // }
                 }}
-                // onMouseLeave={() => {
-                //   if (isPulsing2) {
-                //     // setIsPopUp2(false);
-                //     setIsPulsing2(false);
-                //     // setIsPulsing1(true);
-                //   }
-                // }}
+                onMouseLeave={() => {
+                  // if (isPulsing2) {
+                  setIsPopUp2(false);
+                  // setIsPulsing2(true);
+                  // setIsPulsing1(true);
+                  // }
+                }}
                 style={{ transform: props.xy.interpolate(trans1) }}
               >
                 {isPulsing2 && <div className="ring2 pulsate"></div>}
@@ -364,19 +364,19 @@ const Wacky = () => {
                 ref={planet3Ref}
                 className={`planet planet3`}
                 onMouseEnter={() => {
-                  if (isPulsing3) {
-                    setIsPopUp3(true);
-                    setIsPulsing3(false);
-                    setIsPulsing2(true);
-                  }
+                  // if (isPulsing3) {
+                  setIsPopUp3(true);
+                  // setIsPulsing3(false);
+                  // setIsPulsing2(true);
+                  // }
                 }}
-                // onMouseLeave={() => {
-                //   if (isPulsing3) {
-                //     // setIsPopUp3(false);
-                //     setIsPulsing3(false);
-                //     setIsPulsing2(true);
-                //   }
-                // }}
+                onMouseLeave={() => {
+                  // if (isPulsing3) {
+                  setIsPopUp3(false);
+                  // setIsPulsing3(true);
+                  // setIsPulsing2(true);
+                  // }
+                }}
                 style={{ transform: props.xy.interpolate(trans2) }}
               >
                 {isPulsing3 && <div className="ring3 pulsate"></div>}
@@ -385,19 +385,19 @@ const Wacky = () => {
                 ref={planet4Ref}
                 className={`planet planet4`}
                 onMouseEnter={() => {
-                  if (isPulsing4) {
-                    setIsPopUp4(true);
-                    setIsPulsing4(false);
-                    setIsPulsing3(true);
-                  }
+                  // if (isPulsing4) {
+                  setIsPopUp4(true);
+                  // setIsPulsing4(false);
+                  // setIsPulsing3(true);
+                  // }
                 }}
-                // onMouseLeave={() => {
-                //   if (isPulsing4) {
-                //     // setIsPopUp4(false);
-                //     setIsPulsing4(false);
-                //     setIsPulsing3(true);
-                //   }
-                // }}
+                onMouseLeave={() => {
+                  // if (isPulsing4) {
+                  setIsPopUp4(false);
+                  // setIsPulsing4(true);
+                  // setIsPulsing3(true);
+                  // }
+                }}
                 style={{ transform: props.xy.interpolate(trans3) }}
               >
                 {isPulsing4 && <div className="ring4 pulsate"></div>}
@@ -417,20 +417,19 @@ const Wacky = () => {
                 // style={{ opacity: `${isPulsing3 ? '1' : '0'}` }}
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3">Build your own Website.</h3>
-                  <button
+                  <h3 className="pop-up_h3">Tempor ipsum cupidatat.</h3>
+                  {/* <button
                     onClick={() => {
                       setIsPopUp3(false);
                     }}
                   >
                     <img className="close" src={close} alt="close" />
-                  </button>
+                  </button> */}
                 </div>
                 <p className="pop-up_p">
-                  No skills required - Our Drag & Drop system makes it easy for
-                  you to build a professional looking website. Build your
-                  platform by picking a theme, then customize it to be unique to
-                  your brand in less than 5 minutes.
+                  Ipsum aliquip incididunt non eu Lorem nisi nisi. Dolor sunt
+                  consequat consectetur sint esse do aliquip sit ullamco et
+                  consequat veniam cillum occaecat.
                 </p>
               </div>
             </animated.div>
@@ -451,20 +450,19 @@ const Wacky = () => {
                 }
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3_sub">Explode your Growth!</h3>
-                  <button
+                  <h3 className="pop-up_h3_sub">Tempor ipsum cupidatat.</h3>
+                  {/* <button
                     onClick={() => {
                       setIsPopUp4(false);
                     }}
                   >
                     <img className="close" src={close} alt="close" />
-                  </button>
+                  </button> */}
                 </div>
                 <p className="pop-up_p_sub">
-                  Integrate & Display all of your social media feeds, pics, and
-                  videos on one website, making it easier for your community to
-                  consume your content across multiple platforms. No more having
-                  to give people 10 different links!
+                  Ipsum aliquip incididunt non eu Lorem nisi nisi. Dolor sunt
+                  consequat consectetur sint esse do aliquip sit ullamco et
+                  consequat veniam cillum occaecat.
                 </p>
               </div>
             </animated.div>
@@ -481,20 +479,19 @@ const Wacky = () => {
                 // style={{ opacity: `${isPulsing1 ? '1' : '0'}` }}
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3">Monetize your Passion.</h3>
-                  <button
+                  <h3 className="pop-up_h3">Tempor ipsum cupidatat.</h3>
+                  {/* <button
                     onClick={() => {
                       setIsPopUp1(false);
                     }}
                   >
                     <img className="close" src={close} alt="close" />
-                  </button>
+                  </button> */}
                 </div>
                 <p className="pop-up_p2">
-                  Looking for new ways to boost your income? By leveraging our
-                  tools and services you'll be able to create several new
-                  additional revenue streams while simultaniously providing more
-                  value to your community.
+                  Ipsum aliquip incididunt non eu Lorem nisi nisi. Dolor sunt
+                  consequat consectetur sint esse do aliquip sit ullamco et
+                  consequat veniam cillum occaecat.
                 </p>
               </div>
             </animated.div>
@@ -511,20 +508,19 @@ const Wacky = () => {
                 // style={{ opacity: `${isPulsing2 ? '1' : '0'}` }}
               >
                 <div className="pop-up_header-container">
-                  <h3 className="pop-up_h3_sub">Go full time!</h3>
-                  <button
+                  <h3 className="pop-up_h3_sub">Tempor ipsum cupidatat.</h3>
+                  {/* <button
                     onClick={() => {
                       setIsPopUp2(false);
                     }}
                   >
                     <img className="close" src={close} alt="close" />
-                  </button>
+                  </button> */}
                 </div>
                 <p className="pop-up_p_sub2">
-                  Whether you're just getting started or trying to break into
-                  the top 10, our tools and services aim to make this your full
-                  time gig by helping you grow, manage, and monetize your brand.
-                  Start by building your FREE website.
+                  Ipsum aliquip incididunt non eu Lorem nisi nisi. Dolor sunt
+                  consequat consectetur sint esse do aliquip sit ullamco et
+                  consequat veniam cillum occaecat.
                 </p>
               </div>
             </animated.div>
